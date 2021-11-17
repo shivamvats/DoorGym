@@ -1,9 +1,13 @@
+world_generator/door/leverknobs
+world_generator/world/
+**/__pycache__/
+
 #.gitignore
 .git/
 
 #led / optimized / DLL files
 __pycache__/
-#rlkit/__pycache__/
+rlkit/__pycache__/
 #rlkit/core/__pycache__/
 #rlkit/data_management/__pycache__/
 #rlkit/envs/__pycache__/
