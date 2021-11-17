@@ -5,7 +5,7 @@ from gym.envs.robotics.rotations import quat2euler, euler2quat, mat2euler
 import os
 import random
 import torch
-from mjremote import mjremote
+from .mjremote import mjremote
 import time
 import matplotlib.pyplot as plt
 
@@ -447,6 +447,9 @@ class DoorEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         img = np.transpose(img, (2,0,1))
         img = np.reshape(img, (3*self.imgsize_h*self.imgsize_w))
         return img
+
+    def get_doorangle(self):
+        return self.sim.data.get_joint_qpos("hinge0")
 
     def get_robot_joints(self):
         if self.xml_path.find("baxter")>-1:
